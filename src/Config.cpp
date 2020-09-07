@@ -40,9 +40,9 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 
 Config::Config() :
 	ServerEnabled(true),
-	ServerPort(4444),
+	ServerPort(4445),
 	DebugEnabled(false),
-	AlertsEnabled(true),
+	AlertsEnabled(false),
 	AuthRequired(false),
 	Secret(""),
 	Salt(""),

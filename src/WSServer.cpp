@@ -76,7 +76,10 @@ void WSServer::start(quint16 port)
 	_serverPort = port;
 
 	websocketpp::lib::error_code errorCode;
-	_server.listen(_serverPort, errorCode);
+	_server.listen(asio::ip::tcp::endpoint(asio::ip::address::from_string(
+					     "127.0.0.1"),
+				     _serverPort),
+		       errorCode);
 
 	if (errorCode) {
 		std::string errorCodeMessage = errorCode.message();
